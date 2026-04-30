@@ -39,7 +39,7 @@ jobs:
         with: 
           name: dist-files
       - name: Display Artifacts
-        run: ls
+        run: ls -R
       - name: Deploy
         run: echo "Deploying..."
 
