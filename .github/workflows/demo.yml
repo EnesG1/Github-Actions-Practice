@@ -28,8 +28,8 @@ jobs:
       - name: Uploda artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dist-files
-          path: dist/
+          name: src
+          path: src/
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -37,7 +37,7 @@ jobs:
       - name: Install Artifacts
         uses: actions/download-artifact@v4
         with: 
-          name: dist-files
+          name: src
       - name: Display Artifacts
         run: ls -R
       - name: Deploy
