@@ -34,7 +34,7 @@ jobs:
           path: src/
       - name: HTML File Finder
         id: my-file
-        run: find *.html type -f -execdir echo 'skiqka={}' >> $GITHUB_OUTPUT ';'
+        run: find *.html -type f -execdir echo 'skiqka={}' >> $GITHUB_OUTPUT ';'
   deploy:
     needs: build
     runs-on: ubuntu-latest
