@@ -28,7 +28,7 @@ jobs:
       - name: Uploda artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: spurce-files
+          name: source-files
           path: src/
   deploy:
     needs: build
