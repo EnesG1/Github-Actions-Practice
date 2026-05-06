@@ -4,6 +4,11 @@ on:
     branches:
       - 'secondary'
   workflow_dispatch:
+    inputs:
+      KushAshtu: 
+        description: 'Kush A'
+        required: true
+
 
 jobs:
   testing:
