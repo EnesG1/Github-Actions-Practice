@@ -13,7 +13,7 @@ jobs:
       - name: Getting Code
         uses: actions/checkout@v3
       - name: Install Dependencies
-        run: npm ca
+        run: npm ci
       - name: Running Steps
         run: npm run test
   report:
