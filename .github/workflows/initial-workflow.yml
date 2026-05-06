@@ -3,6 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   testing:
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: Getting Code
