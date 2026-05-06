@@ -1,5 +1,9 @@
 name: My Initial workflow
-on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+      - 'secondary'
+  workflow_dispatch:
 
 jobs:
   testing:
