@@ -21,6 +21,20 @@ jobs:
         run: npm ci
       - name: Running Steps
         run: npm run test
+      - name: Upload Artifact
+        uses: actions/upload-artifacts@v4
+        with:
+          name: src-dir
+          path: src/
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting Code
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Running the build
+        run: npm run build
   report:
     runs-on: ubuntu-latest
     needs: testing
