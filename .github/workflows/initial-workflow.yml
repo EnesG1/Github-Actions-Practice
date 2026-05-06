@@ -2,7 +2,7 @@ name: My Initial workflow
 on:
   push:
     branches:
-      - 'secondary'
+      - 'master'
   workflow_dispatch:
     inputs:
       KushAshtu: 
