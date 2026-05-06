@@ -40,6 +40,8 @@ jobs:
     needs: testing
     if: ${{ always()}}
     steps:
+      - name: Downloading artifact
+        uses: actions/download-artifact@v4
       - name: Run Report
         run: echo "${{ needs.testing.result }}"
 
