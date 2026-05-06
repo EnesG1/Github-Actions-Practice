@@ -15,7 +15,7 @@ jobs:
   report:
     runs-on: ubuntu-latest
     needs: testing
-    if: failure()
+    if: ${{ always()}}
     steps:
       - name: Run Report
         run: echo "${{ needs.testing.result }}"
