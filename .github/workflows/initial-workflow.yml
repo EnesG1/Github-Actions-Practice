@@ -8,7 +8,7 @@ jobs:
       - name: Getting Code
         uses: actions/checkout@v3
       - name: Install Dependencies
-        run: npm ci
+        run: npm ca
       - name: Running Steps
         run: npm run test
   report:
