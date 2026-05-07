@@ -23,6 +23,9 @@ jobs:
         run: npm run test
   build:
     runs-on: ubuntu-latest
+
+    outputs:
+      js_file: ${{steps.filinjo.outputs.filename}}
     steps:
       - name: Getting Code
         uses: actions/checkout@v3
@@ -35,9 +38,12 @@ jobs:
         with:
           name: src-dir
           path: src/
+      - name: Add JS Output
+        id: filinjo
+        run: echo "filename=$(find . -name '*.js' -type f -print -quit)" >> $GITHUB_OUTPUT 
   report:
     runs-on: ubuntu-latest
-    needs: testing
+    needs: [testing, build]
     if: ${{ always()}}
     steps:
       - name: Downloading artifact
